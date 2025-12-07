@@ -1,0 +1,598 @@
+/* 
+    37. blog-details
+*/
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// blog-details-start
+
+.blog-details-content {
+    .main-img {
+        width: 100%;
+        height: 420px;
+        overflow: hidden;
+        @media #{$xs} {
+            height: 350px;
+        }
+        @media #{$sm} {
+            height: 420px;
+        }
+    }
+    .title {
+        font-size: 42px;
+        font-weight: 800;
+        line-height: 1.19;
+        margin-bottom: 20px;
+        @media #{$lg} {
+            font-size: 36px;
+        }
+        @media #{$md} {
+            font-size: 34px;
+        }
+        @media #{$xs} {
+            font-size: 26px;
+        }
+        @media #{$sm} {
+            font-size: 32px;
+        }
+    }
+    .subtitle {
+        font-size: 34px;
+        font-weight: 900;
+        line-height: 1.35;
+        color: #0E191E;
+        margin-bottom: 20px;
+        @media #{$lg} {
+            font-size: 32px;
+        }
+        @media #{$md} {
+            font-size: 30px;
+        }
+        @media #{$xs} {
+            font-size: 26px;
+        }
+        @media #{$sm} {
+            font-size: 28px;
+        }
+    }
+    .disc {
+        margin-bottom: 20px;
+    }
+    .inner-div {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 30px;
+        @media #{$xs} {
+            grid-template-columns: auto;
+        }
+    }
+}
+
+
+.blog-details-content-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px 50px;
+
+    padding: 21px  0;
+    border-bottom: 1px solid rgb(20 21 21 / 10%);
+    margin-bottom: 22px;
+
+    span {
+        display: inline-block;
+        text-transform: capitalize;
+
+        i {
+            display: inline-block;
+            margin-right: 5px;
+            transform: translateY(2px);
+        }
+    }
+    
+}
+
+
+
+.blog-details-blockquote-1 {
+    background-color: #F8F5FE;
+    color: #141515;
+    font-family: var(--urbanist);
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 32px;
+    position: relative;
+    padding: 30px;
+    border-radius: 0 0 30px 30px;
+    @media #{$xs} {
+        padding: 30px 15px;
+    }
+    @media #{$sm} {
+        padding: 20px;
+    }
+    .author {
+        display: block;
+        position: relative;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--chy-pr-1);
+        text-transform: uppercase;
+        line-height: 30px;
+        padding-left: 70px;
+        margin-top: 14px;
+        &::after {
+            position: absolute;
+            content: "";
+            width: 60px;
+            height: 2px;
+            background: var(--chy-gd-1);
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+    }
+    .icon {
+        font-size: 120px;
+        color: var(--chy-pr-1);
+        line-height: 1;
+        position: absolute;
+        left: 20px;
+        top: 0;
+        opacity: .1;
+    }
+}
+
+
+.blog-details-content-list {
+    li {
+        font-size: 18px;
+        font-family: var(--urbanist);
+        color: #141515;
+        line-height: 28px;
+        font-weight: 400;
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+        i {
+            margin-right: 6px;
+            display: inline-block;
+            transform: translateY(3px);
+            color: #F08441;
+        }
+        
+    }
+}
+
+
+
+
+.blog-details-tag-share-wrap {
+    padding: 25px 0;
+    border-top: 1px solid rgb(20 21 21 / 10%);
+    border-bottom: 1px solid rgb(20 21 21 / 10%);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    .title {
+        font-size: 22px;
+        display: inline-block;
+        line-height: 26px;
+        font-weight: 700;
+        margin-right: 10px;
+    }
+    .blog-details-tag {
+        @media #{$xs} {
+            margin-bottom: 20px;
+        }
+        a {
+            background: #F8F8F9;
+            color: #504E4E;
+            text-transform: capitalize;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            display: inline-block;
+            padding: 7px 25px;
+            transition: 300ms ease;
+            &:hover {
+                background-color: var(--chy-pr-1);
+                color: #fff;
+            }
+        }
+
+    }
+    .blog-details-share {
+        a {
+            display: inline-block;
+            transition: 400ms;
+            &:hover {
+                scale: 1.03;
+            }
+        }
+    }
+}
+
+
+.blog-next-btn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 50px 25px;
+    background: #F8F8F9;
+    border-radius: 10px;
+    @media #{$xs} {
+        grid-template-columns: 1fr ;
+        gap: 10px;
+    }
+    .btn-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        &:not(:last-child) {
+            padding-right: 30px;
+            border-right: 1px solid rgb(84 86 97 / 8%);
+            @media #{$xs} {
+                padding-right: 0px;
+                border-right: 0px solid rgb(84 86 97 / 8%);
+            }
+            @media #{$sm} {
+                padding-right: 30px;
+                border-right: 1px solid rgb(84 86 97 / 8%);
+            }
+        }
+        &:not(:first-child) {
+            padding-left: 30px;
+            flex-direction: row-reverse;
+            @media #{$xs} {
+                padding-left: 0px;
+            }
+            @media #{$sm} {
+                padding-left: 30px;
+            }
+            .content-wrap {
+                text-align: right;
+            }
+        }
+        @media #{$xs} {
+            flex-wrap: wrap;
+        }
+        @media #{$sm} {
+            flex-wrap: nowrap;
+        }
+    }
+
+    .main-img {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        flex: 0 0 auto;
+        cursor: pointer;
+
+        @media #{$lg} {
+            width: 80px;
+            height: 80px;
+        }
+        .arrow-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            z-index: 1;
+            font-size: 30px;
+            color: #fff;
+            width: 52px;
+            height: 52px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            transition: 400ms ease-in-out;
+            z-index: 2;
+        }
+        &::after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(87deg, #A249ED 57.32%, #6934E9 97.15%);
+            content: "";
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: 400ms ease-in-out;
+        }
+        &:hover {
+            .arrow-btn {
+                background: #fff;
+                color: var(--chy-pr-1);
+            }
+            &::after {
+                opacity: .5;
+            }
+        }
+    }
+    .date {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--chy-pr-1);
+        text-transform: uppercase;
+        line-height: 26px;
+        margin-bottom: 5px;
+    }
+    .title {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 26px;
+        &:hover {
+            color: var(--chy-pr-1);
+        }
+    }
+}
+
+.blog-details-comment-item {
+    background: var(--chy-gd-1);
+    border-radius: 5px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    @media #{$xs} {
+        flex-wrap: wrap;
+    }
+    @media #{$sm} {
+        flex-wrap: nowrap;
+    }
+}
+
+.blog-details-comment-item {
+    .img-wrap {
+        flex: 0 0 auto;
+        width: 140px;
+        height: 140px;
+        overflow: hidden;
+        border-radius: 50%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .name {
+        font-size: 24px;
+        line-height: 26px;
+        text-transform: capitalize;
+        font-weight: 900;
+        color: #fff;
+        margin-bottom: 15px;
+        display: block;
+    }
+    .comment-text {
+        font-size: 18px;
+        font-weight: 400;
+        color: #fff;
+        line-height: 30px;
+        margin-bottom: 20px;
+    }
+    .social-link {
+        li {
+            display: inline-block;
+            margin-right: 10px;
+            a {
+                font-size: 20px;
+                line-height: 1;
+                color:#fff;
+                &:hover {
+                    color: #F08441;
+                }
+            }
+        }
+    }
+    
+}
+
+
+.blog-details-comments-wrap {
+    .title {
+        font-size: 34px;
+        font-weight: 900;
+        line-height: 1.27;
+        margin-bottom: 20px;
+    }
+}
+
+.comments-box-single {
+    display: flex;
+    gap: 25px;
+    padding: 30px 0;
+    border-top: 1px solid rgb(20 21 21 / 10%);
+    @media #{$xs} {
+        flex-wrap: wrap;
+    }
+    @media #{$sm} {
+        flex-wrap: nowrap;
+    }
+
+    &:nth-last-child(1) {
+        border-bottom: 1px solid rgb(20 21 21 / 10%);
+    }
+    .person-img {
+        flex: 0 0 auto;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .heading-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .name {
+        display: inline-block;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        margin-bottom: 5px;
+    }
+    
+    .date {
+        display: block;
+        font-family: var(--urbanist);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        text-transform: capitalize;
+        color:#504E4E;
+    }
+    .reply-btn {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 20px;
+        text-transform: capitalize;
+        color: #F08441;
+        transition: 400ms ease;
+        i {
+            display: inline-block;
+            margin-right: 5px;
+        }
+        &:hover {
+            color: var(--chy-pr-1);
+        }
+    }
+    
+    .comment-text {
+        width: 80%;
+    }
+}
+
+
+.blog-details-content {
+    .contact-form-wrap {
+        .btn-wrap {
+            text-align: left;
+        }
+    }
+}
+
+
+.blog-details-title {
+    font-family: var(--urbanist);
+    color: #111010;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1.25;
+    margin-bottom: 25px;
+
+}
+
+.blog-detalis-pera {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30px;
+    color: #606364;
+    margin-bottom: 20px;
+}
+
+
+
+.blog-details-inner-img {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    @media #{$xs} {
+        grid-template-columns: 1fr;
+    }
+    @media #{$sm} {
+        grid-template-columns: 1fr 1fr;
+    }
+    .img-item {
+        width: 100%;
+        height: 245px;
+        border-radius: 10px;
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.blog-details-subtitle {
+    font-size: 36px;
+    font-weight: 900;
+    color: #0E191E;
+    line-height: 1.27;
+    margin-bottom: 20px;
+    font-family: var(--urbanist);
+    @media #{$lg} {
+        font-size: 34px;
+    }
+    @media #{$md} {
+        font-size: 30px;
+    }
+    @media #{$xs} {
+        font-size: 22px;
+    }
+    @media #{$sm} {
+        font-size: 28x;
+    }
+}
+
+.blog-details-post-next-btn {
+
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    border-bottom: 1px solid rgb(17 16 16 / 10%);
+    @media #{$xs} {
+        flex-wrap: wrap;
+        gap: 30px
+    }
+    .next-prv-btn {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 26px;
+        color: #0E191E;
+        text-transform: uppercase;
+        transition: 400ms ease;
+        i {
+            margin: 0 5px;
+        }
+        &:hover {
+            color: var(--pr-ec4814);
+        }
+    }
+}
+
+.texdft {
+
+    a {
+        display: inline-block;
+        background-color: #F5F5F5;
+        color: #080821;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 28px;
+        text-transform: capitalize;
+        height: 28px;
+        padding: 0 12px;
+        margin-right: 2px;
+        @media #{$xs} {
+            margin-bottom: 5px;
+        }
+        &:hover {
+          background-color: var(--h1-pr-color);
+          color: #fff;
+        }
+    }
+}
+
+// blog-details-end

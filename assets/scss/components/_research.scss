@@ -1,0 +1,289 @@
+/* 
+    10. research
+*/
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+// research-1-start
+
+.chy-research-1 {
+    &-area {
+        .section-title-wrap {
+            max-width: 520px;
+            margin: auto;
+            margin-bottom: 80px;
+            .chy-title-1, .chy-subtitle-1, .chy-section-para-1 {
+                color: #fff;
+            }
+        }
+        
+    }
+    
+}
+
+.chy-research-1-item {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    .main-img {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: auto;
+        margin-bottom: 15px;
+        img {
+            transition: 1000ms ease-in-out;
+        }
+    }
+    .title {
+        font-size: 28px;
+        color: #fff;
+        font-weight: 800;
+        line-height: 1.38;
+        margin-bottom: 6px;
+    }
+    .disc {
+        color: #fff;
+    }
+    .icon {
+        width: 63px;
+        height: 63px;
+        border-radius: 50%;
+        background: #fff;
+        position: absolute;
+        top: -10px;
+        left: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 400ms ease-in-out;
+        img {
+            width: 60%;
+        }
+    }
+
+    &:hover {
+        .icon {
+            transform: rotateY(180deg);
+            background: var(--chy-pr-1);
+        }
+        .main-img {
+            > img {
+                scale: 1.05;
+                transform: rotateZ(10deg);
+            }
+        }
+    }
+    
+}
+
+
+// research-1-end
+
+// research-2-start
+
+.chy-research-2-area {
+    @media #{$lg} {
+        padding-bottom: 120px;
+    }
+}
+
+.chy-research-2 {
+    &-img {
+        position: relative;
+        padding-right: 30px;
+        @media #{$md,$xs} {
+            padding-right: 30px;
+        }
+        .img-icon {
+            position: absolute;
+            left: -30px;
+            top: 0;
+        }
+        
+    }
+    &-content {
+        padding-left: 20px;
+        padding-bottom: 80px;
+        @media #{$lg,$md,$xs} {
+            padding-left: 0px;
+            padding-bottom: 0px;
+            padding-top: 50px;
+        }
+    }
+    &-list {
+        li {
+            font-weight: 800;
+            font-size: 18px;
+            line-height: 30px;
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+            i {
+                color: var(--chy-pr-2);
+                font-size: 16px;
+                margin-right: 3px;
+            }
+        }
+    }
+    &-progress {
+        display: flex;
+        gap: 45px;
+        flex-wrap: wrap;
+    }
+}
+
+
+.chy-research-2-progress-item {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    
+    .progress-circle  {
+        canvas {
+            background-color: #fff;
+            border-radius: 50%;
+        }
+        .knob {
+            font-size: 20px !important;
+            color: #191825 !important;
+            font-weight: 800 !important;
+            font-family: var(--urbanist) !important;
+        }
+
+    }
+    .title {
+        font-size: 20px;
+        font-weight: 800;
+        line-height: 25px;
+    }
+}
+
+
+
+// research-2-end
+
+// research-3-start
+
+
+.chy-research-3 {
+    &-wrap {
+        margin-left: -20px;
+        margin-right: -20px;
+        @media #{$xl,$lg,$md,$xs} {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    }
+    &-img {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        @media #{$xs} {
+            grid-template-columns: 1fr;
+        }
+        @media #{$sm} {
+            grid-template-columns: 1fr 1fr;
+        }
+        .main-img {
+            width: 100%;
+            height: 530px;
+            overflow: hidden;
+            border-radius: 300px;
+            &:nth-child(1) {
+                margin-top: 120px;
+            }
+            @media #{$xs} {
+                height: 400px;
+            }
+        }
+    }
+}
+
+
+.chy-research-3 {
+    &-area {
+        position: relative;
+        z-index: 1;
+    }
+    &-contnet {
+        padding-left: 55px;
+        margin-top: 40px;
+        @media #{$xl} {
+            padding-left: 35px;
+        }
+        @media #{$md,$xs} {
+            padding-left: 0px;
+        }
+    }
+}
+
+
+
+.chy-research-3-list {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 22px 0;
+    @media #{$xs} {
+        grid-template-columns: 1fr;
+    }
+    @media #{$sm} {
+        grid-template-columns: 1.2fr 1fr;
+    }
+    li {
+        font-size: 23px;
+        font-weight: 800;
+        color: #000;
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        @media #{$xl} {
+            font-size: 20px;
+        }
+        @media #{$xs} {
+            font-size: 18px;
+        }
+        i {
+            width: 50px;
+            height: 50px;
+            background: #FFF7F2;
+            display: inline-flex;
+            font-size: 18px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            color: #FFBD8D;
+            flex: 0 0 auto;
+            transition: 600ms ease;
+        }
+        &:nth-child(2) {
+            i {
+                background-color: #FEF1F2;
+                color: #F5818C;
+            }
+        }
+        &:nth-child(3) {
+            i {
+                background-color: #EBFBFF;
+                color: #07D3FC;
+            }
+        }
+        &:nth-child(4) {
+            i {
+                background-color: #F0FBF7;
+                color: #48D39B;
+            }
+        }
+        &:hover {
+            i {
+                transform: rotate(360deg) scale(1.3);
+            }
+        }
+    }
+}
+
+// research-3-end

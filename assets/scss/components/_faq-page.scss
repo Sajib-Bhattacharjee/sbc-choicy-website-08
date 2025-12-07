@@ -1,0 +1,45 @@
+/* 
+    29. faqs-page
+*/
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+
+// faq-page-start
+.chy-faq-page-content {
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: space-between;
+    height: 100%;
+    @media #{$md,$xs} {
+        padding-bottom: 50px;
+    }
+    .section-title-wrap {
+        position: sticky;
+        top: 120px;
+        margin-bottom: 90px;
+    }
+}
+.chy-faq-page-accordion {
+    .chy-sd-1-item {
+        .accordion-item {
+            background: #fff;
+            .accordion-header {
+                .accordion-button {
+                    background: transparent;
+                    .icon-2 {
+                        -webkit-text-fill-color: #F08441;
+                    }
+                }
+            }
+            .accordion-body {
+                .disc {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+}
+// faq-page-end

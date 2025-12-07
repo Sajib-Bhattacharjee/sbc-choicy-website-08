@@ -1,0 +1,76 @@
+/* 
+    35. job-apply
+*/
+
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+// job-apply-page-start
+.jobs-apply-area {
+
+    .upload-file {
+        grid-column-start: 1;
+        grid-column-end: -1;
+        .title {
+            display: block;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 28px;
+            text-transform: capitalize;
+            margin-bottom: 15px;
+        }
+
+    }
+
+    .section-title-wrap {
+        .chy-section-para-1  {
+            max-width: 707px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    
+}
+
+.upload-file-btn-wrap {
+    .upload-file-btn {
+        display: inline-block;
+        border: none;
+        outline: none;
+        text-transform: capitalize;
+        font-weight: 600;
+        font-size: 15px;
+        background-color: #161D39;
+        color: #fff;
+        border-radius: 30px;
+        padding: 15px 40px;
+        transition: 400ms ease;
+        &:hover {
+            background-color: var(--chy-pr-1);
+        }
+    }
+    .text {
+        font-size: 15px;
+        font-weight: 500;
+        text-transform: capitalize;
+        color: #0E191E;
+        margin-left: 20px;
+        @media #{$xs} {
+            display: block;
+        }
+        @media #{$sm} {
+            display: inline-block;
+        }
+    }
+}
+
+.jobs-apply-wrap {
+    padding-left: 120px;
+    padding-right: 120px;
+    @media #{$md,$xs} {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+// job-apply-page end

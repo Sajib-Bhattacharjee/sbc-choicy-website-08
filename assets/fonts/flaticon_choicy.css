@@ -1,0 +1,167 @@
+@font-face {
+    font-family: "flaticon_choicy";
+    src: url("./flaticon_choicy.ttf?bbc253cea53c9eab004a9b86e967a498") format("truetype"),
+url("./flaticon_choicy.woff?bbc253cea53c9eab004a9b86e967a498") format("woff"),
+url("./flaticon_choicy.woff2?bbc253cea53c9eab004a9b86e967a498") format("woff2"),
+url("./flaticon_choicy.eot?bbc253cea53c9eab004a9b86e967a498#iefix") format("embedded-opentype"),
+url("./flaticon_choicy.svg?bbc253cea53c9eab004a9b86e967a498#flaticon_choicy") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon_choicy !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-black-circle:before {
+    content: "\f101";
+}
+.flaticon-straight-right-arrow:before {
+    content: "\f102";
+}
+.flaticon-left-arrow:before {
+    content: "\f103";
+}
+.flaticon-viber:before {
+    content: "\f104";
+}
+.flaticon-avatar:before {
+    content: "\f105";
+}
+.flaticon-left-arrow-1:before {
+    content: "\f106";
+}
+.flaticon-right-arrow:before {
+    content: "\f107";
+}
+.flaticon-facebook:before {
+    content: "\f108";
+}
+.flaticon-check:before {
+    content: "\f109";
+}
+.flaticon-instagram:before {
+    content: "\f10a";
+}
+.flaticon-project-management:before {
+    content: "\f10b";
+}
+.flaticon-badge:before {
+    content: "\f10c";
+}
+.flaticon-check-mark:before {
+    content: "\f10d";
+}
+.flaticon-star:before {
+    content: "\f10e";
+}
+.flaticon-shopping-cart:before {
+    content: "\f10f";
+}
+.flaticon-discount:before {
+    content: "\f110";
+}
+.flaticon-price-tag:before {
+    content: "\f111";
+}
+.flaticon-business:before {
+    content: "\f112";
+}
+.flaticon-innovation:before {
+    content: "\f113";
+}
+.flaticon-email:before {
+    content: "\f114";
+}
+.flaticon-usb:before {
+    content: "\f115";
+}
+.flaticon-megaphone:before {
+    content: "\f116";
+}
+.flaticon-idea:before {
+    content: "\f117";
+}
+.flaticon-right-arrow-1:before {
+    content: "\f118";
+}
+.flaticon-smile:before {
+    content: "\f119";
+}
+.flaticon-email-marketing:before {
+    content: "\f11a";
+}
+.flaticon-usb-drive:before {
+    content: "\f11b";
+}
+.flaticon-chat:before {
+    content: "\f11c";
+}
+.flaticon-twitter:before {
+    content: "\f11d";
+}
+.flaticon-change:before {
+    content: "\f11e";
+}
+.flaticon-inbox:before {
+    content: "\f11f";
+}
+.flaticon-usb-1:before {
+    content: "\f120";
+}
+.flaticon-right-up:before {
+    content: "\f121";
+}
+.flaticon-record-button:before {
+    content: "\f122";
+}
+.flaticon-innovation-1:before {
+    content: "\f123";
+}
+.flaticon-inspiration:before {
+    content: "\f124";
+}
+.flaticon-software-development:before {
+    content: "\f125";
+}
+.flaticon-data-management:before {
+    content: "\f126";
+}
+.flaticon-digital-campaign:before {
+    content: "\f127";
+}
+.flaticon-time-management:before {
+    content: "\f128";
+}
+.flaticon-time-management-1:before {
+    content: "\f129";
+}
+.flaticon-email-1:before {
+    content: "\f12a";
+}
+.flaticon-open-mail:before {
+    content: "\f12b";
+}
+.flaticon-web-designing:before {
+    content: "\f12c";
+}
+.flaticon-time-optimization:before {
+    content: "\f12d";
+}
+.flaticon-business-people:before {
+    content: "\f12e";
+}
+.flaticon-change-management:before {
+    content: "\f12f";
+}
+.flaticon-lauch:before {
+    content: "\f130";
+}
+.flaticon-message:before {
+    content: "\f131";
+}

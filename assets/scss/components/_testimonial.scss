@@ -1,0 +1,615 @@
+/* 
+    20. testimonial
+*/
+
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+// testimonial-2-start
+
+.chy-testimonial-2-area {
+    background: #000;
+}
+
+.chy-testimonial-2-slider {
+    max-width: 1050px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.chy-testimonial-2-item {
+    text-align: center;
+    .main-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 25px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            margin-left: auto;
+        }
+    }
+    .comment {
+        font-size: 25px;
+        line-height: 1.44;
+        font-weight: 600;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 38px;
+        @media #{$xs} {
+            font-size: 20px;
+        }
+    }
+    .person-wrap {
+        display: inline-flex;
+        gap: 25px;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        .icon {
+            width: 60px;
+            height: 60px;
+            background: var(--chy-pr-2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: #000;
+        }
+        .name {
+            font-size: 25px;
+            font-weight: 800;
+            color: #fff;
+        }
+        .bio {
+            font-size: 18px;
+            color: var(--chy-pr-2);
+            font-weight: 700;
+            text-align: left;
+        }
+    }
+}
+
+
+.chy-testimonial-2-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+    padding-top: 30px;
+    min-height: 20px;
+    min-height: 52px;
+    span {
+        width: 11px;
+        height: 11px;
+        opacity: 1;
+        background: #424242;
+        &:is(.swiper-pagination-bullet-active) {
+            background: var(--chy-pr-2);
+            width: 19px;
+            height: 19px;
+        }
+    }
+}
+
+.chy-testimonial-2-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    img {
+        opacity: .3;
+        transition: 500ms ease;
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+}
+
+// testimonial-2-end
+
+// testimonial-3-start
+
+.chy-testimonial-3-item {
+    position: relative;
+    border: 3px solid;
+    border-color: rgb(242, 242, 242);
+    padding-left: 45px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    transition: 400ms ease-in-out;
+    margin-bottom: 22px;
+    @media #{$lg} {
+        padding-left: 30px;
+        gap: 20px;
+    }
+    @media #{$md,$xs} {
+        padding: 20px;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .number {
+        font-size: 40px;
+        display: inline-block;
+        font-weight: 800;
+        color: #272324;
+        background: #F2F2F2;
+        padding: 27px 27px;
+        border-radius: 10px;
+        transition: 400ms ease-in-out;
+    }
+
+    .title-wrap {
+        flex: 0 0 auto;
+        transform: translateY(45px);
+        transition: 400ms ease-in-out;
+        @media #{$xs} {
+            flex: 0 0 100%;
+        }
+        @media #{$sm} {
+            flex: 0 0 auto;
+        }
+    }
+    .subtitle {
+        font-size: 17px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #7e7e7e;
+        margin-bottom: 10px;
+    }
+    .title {
+        font-size: 35px;
+        font-weight: 900;
+        color: #272324;
+        margin-bottom: 15px;
+        &:hover {
+            color: var(--chy-pr-3);
+        }
+        @media #{$lg} {
+            font-size: 30px;
+
+        }
+        @media #{$xs} {
+            font-size: 25px;
+        }
+        @media #{$sm} {
+            font-size: 35px;
+        }
+    }
+    .bio {
+        font-size: 17.2px;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: #272324;
+        display: inline-block;
+        background: var(--chy-pr-3);
+        padding: 12px 15px;
+        border-radius: 30px;
+        opacity: 0;
+        transition: 100ms ease-in-out;
+        transform: translateY(5px);
+        
+        &:not(:last-child) {
+            margin-bottom: 5px;
+        }
+    
+    }
+    .disc {
+        transition: 400ms ease-in-out;
+        transition-delay: .5s;
+    }
+    .main-img {
+        position: absolute;
+        right: 7vw;
+        bottom: -40px;
+        transform: scale(.5) rotate(32deg);
+        opacity: 0;
+        transition: 600ms ease-in-out;
+        @media #{$lg} {
+            width: 40%;
+        }
+        @media #{$md,$xs} {
+            position: unset;
+            opacity: 1;
+            transform: scale(1) rotate(0);
+        }
+    }
+    .p3-btn {
+        display: flex;
+        width: 170px;
+        height: 175px;
+        border-left: 3px solid;
+        border-color: rgb(242, 242, 242);
+        flex: 0 0 auto;
+        text-align: center;
+        justify-content: center;
+        line-height: 190px;
+        font-size: 55px;
+        color: #000;
+        transition: 800ms ease-in-out;
+        @media #{$lg} {
+            width: 100px;
+        }
+        @media #{$md,$xs} {
+            height: 150px;
+            border-left-color: transparent;
+        }
+    }
+    &:is(.active) {
+        border-color: var(--chy-pr-3);
+        box-shadow: 0px 3px 60px 0px rgba(32, 42, 181, 0.11);
+        .number {
+            background-color: var(--chy-pr-3);
+        }
+        .title-wrap {
+            transform: translateY(0px);
+        }
+        .bio {
+            opacity: 1;
+            transform: translateY(0);
+            transition: 800ms ease-in-out;
+        }
+        .disc {
+            opacity: 0;
+            transition-delay: 0s;
+            @media #{$md,$xs} {
+                opacity: 1;
+            }
+        }
+        .main-img {
+            bottom: 20px;
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+        }
+        .p3-btn {
+            height: 266px;
+            line-height: 280px;
+            color: var(--chy-pr-3);
+            border-left-color: transparent;
+            @media #{$md,$xs} {
+                height: 150px;
+                line-height: 160px;
+            }
+        }
+    }
+}
+
+// testimonial-3-end
+
+// testimonial-4-start
+.chy-testimonial-4-item {
+    position: relative;
+    display: flex;
+    gap: 40px;
+    padding-left: 10.4375rem;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    padding-right: 137px;
+    @media #{$lg} {
+        padding-right: 100px;
+    }
+    @media #{$md} {
+        padding-right: 100px;
+        padding-left: 5.4375rem;
+    }
+    @media #{$xs} {
+        padding-right: 55px;
+        padding-left: 55px;
+        flex-wrap: wrap;
+    }
+    &::after {
+        width: 500px;
+        height: 500px;
+        content: "";
+        position: absolute;
+        left: 500px;
+        top: 0;
+        background: #E5FFEF;
+        border-radius: 50%;
+        z-index: -1;
+        transition: 1s cubic-bezier(0.76, 0.22, 0.39, 0.84);
+        transform: scale(.5);
+        @media #{$md} {
+            left: 200px;
+        }
+        @media #{$xs} {
+            width: 280px;
+            height: 280px;
+        }
+    }
+    .icon {
+        flex: 0 0 auto;
+    }
+    .subtitle {
+        display: block;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #262524;
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+    .comment {
+        font-size: 43px;
+        line-height: 1.51;
+        font-weight: 800;
+        color: #262524;
+        margin-bottom: 35px;
+        @media #{$lg} {
+            font-size: 33px;
+        }
+        @media #{$md} {
+            font-size: 30px;
+        }
+        @media #{$xs} {
+            font-size: 22px;
+        }
+    }
+    .person-img {
+        width: 85px;
+        height: 85px;
+        border-radius: 50%;
+        overflow: hidden;
+        flex: 0 0 auto;
+    }
+    .name {
+        display: block;
+        font-size: 24px;
+        font-weight: 800;
+        color: #0d0d0d;
+        margin-bottom: 9px;
+    }
+    .reating {
+        font-size: 18px;
+        color: #EA9034;
+        margin-right: 3px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .person-wrap {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+.chy-testimonial-4-slider {
+    position: relative;
+    .swiper-container {
+        .swiper-wrapper {
+            .swiper-slide {
+                &:is(.swiper-slide-active) {
+                    .chy-testimonial-4-item {
+                        &::after {
+                            left: 70px;
+                            transform: scale(1);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+    .chy_testimonial_4_prev , .chy_testimonial_4_next {
+        width: 80px;
+        height: 80px;
+        background: #fff;
+        border: 2px solid #000;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: #000;
+        transition: 400ms ease;
+        z-index: 3;
+        @media #{$xs} {
+            width: 45px;
+            height: 45px;
+        }
+        &:hover {
+            background: var(--chy-pr-3);
+            border-color: transparent;
+        }
+    }
+
+    .chy_testimonial_4_prev {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -45px;
+        @media #{$xl,$lg,$md,$xs} {
+            left: 0px;
+        }
+    }
+    .chy_testimonial_4_next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -45px;
+        @media #{$xl,$lg,$md,$xs} {
+            right: 0px;
+        }
+    }
+}
+
+// testimonial-4-end
+
+// testimonial-5-start
+
+.chy-testimonial-5 {
+    &-area {
+        background: rgb(59 43 82 / 3%);
+        position: relative;
+        .chy-testimonial-5-preview {
+            position: absolute;
+            top: 60%;
+            left: 8vw;
+            transform: translateY(-50%);
+            @media #{$xxxl} {
+                left: 1vw;
+            }
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+                position: unset;
+                margin-top: 100px;
+                text-align: center;
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+        }
+    }
+    
+}
+
+.chy-testimonial-5-item {
+    display: grid;
+    grid-template-columns: 1.12fr 2fr;
+    gap: 50px;
+    align-items: center;
+
+    @media #{$md,$xs} {
+        grid-template-columns: 1fr;
+    }
+    .main-img {
+        border-radius: 10px 10px 0 0;
+        height: 615px;
+        overflow: hidden;
+        display: flex;
+        align-items: end;
+        @media #{$xs} {
+            height: 415px;
+        }
+        @media #{$sm} {
+            height: 615px;
+        }
+        img {
+            transform: translateY(100%);
+            transition: 1000ms cubic-bezier(0.08, 0.28, 0.37, 0.99);
+        }
+    }
+
+    .section-title-wrap {
+        max-width: 600px;
+    }
+    
+    .comment-wrap {
+        background: #fff;
+        border-radius: 15px;
+        padding: 45px;
+        margin-left: 40px;
+        position: relative;
+        transform: translateX(106%);
+        transition: 1000ms cubic-bezier(0.08, 0.28, 0.37, 0.99);
+        @media #{$md,$xs} {
+            margin-left: 0px;
+        }
+        .arrow-icon {
+            position: absolute;
+            left: -38px;
+            top: 30px;
+            z-index: -1;
+            @media #{$md,$xs} {
+                display: none;
+            }
+        }
+        .qoute {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            opacity: .8;
+            @media #{$xs} {
+                width: 150px;
+            }
+            @media #{$sm} {
+                width: 300px;
+            }
+        }
+    }
+    .comment-text {
+        font-size: 26px;
+        font-weight: 500;
+        line-height: 1.41;
+        margin-bottom: 30px;
+        @media #{$lg,$md,$xs} {
+            font-size: 22px;
+        }
+    }
+    .name {
+        display: inline-block;
+        font-size: 22px;
+        line-height: 28px;
+        background: linear-gradient(90deg, #9255CE -2.17%, #BE60FF 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 7px;
+    }
+    .bio {
+        font-size: 16px;
+        display: block;
+        line-height: 24px;
+    }
+}
+
+.chy-t5-preview-item {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #EAEBEE;
+    border: 1px solid ;
+    border-color: transparent;
+    object-position: top;
+    cursor: pointer;
+}
+
+.chy-testimonial-5-slider {
+    .swiper-container {
+        
+        .swiper-wrapper {
+            .swiper-slide {
+                &:is(.swiper-slide-active) {
+                    .chy-testimonial-5-item  {
+                        .main-img {
+                            img {
+                                transform: translateY(0);
+                            }
+                        }
+                        .comment-wrap {
+                            transform: translateX(0%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.chy-testimonial-5-preview {
+    .swiper-container {
+        .swiper-slide {
+            height: 102px !important;
+            @media #{$xxl,$xl,$lg,$md,$xs} {
+                width: 102px !important;
+            }
+            &:is(.swiper-slide-thumb-active) {
+                .chy-t5-preview-item {
+                    border-color: #9255CE;
+                }
+                
+            }
+        }
+    }
+}
+
+// testimonial-5-end

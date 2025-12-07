@@ -1,0 +1,448 @@
+/* 
+    13. team
+*/
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+// team-1-start
+.chy-team-1-area {
+    position: relative;
+    z-index: 1;
+    .bg-shape {
+        position: absolute;
+        width: 100%;
+        height: 595px;
+        background: #eddfff;
+        bottom: 0px;
+        z-index: -1;
+    }
+    .section-title-wrap {
+        max-width: 760px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+.chy-team-1-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 50px 140px;
+    position: relative;
+    @media #{$md} {
+        gap: 30px 30px;
+    }
+    @media #{$xs} {
+        gap: 30px 30px;
+        flex-wrap: wrap;
+    }
+    .il-img-2 {
+        width: 40px;
+        z-index: 1;
+        position: absolute;
+        left: 48%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        animation: chyh1curle 10s infinite ease-in-out;
+        @media #{$md,$xs} {
+            display: none;
+        }
+    }
+    .il-img-3 {
+        width: 80px;
+        z-index: 1;
+        position: absolute;
+        left: 51%;
+        top: 64%;
+        transform: translate(-50%, -50%);
+               animation: chyh1curle 7s infinite ease-in-out;
+        @media #{$md,$xs} {
+            display: none;
+        }
+    }
+}
+
+.chy-team-1-member {
+    position: relative;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    @media #{$md} {
+        padding-left: 0;
+    }
+    @media #{$xs} {
+        padding-left: 0;
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+    .main-img {
+        position: relative;
+        max-width: 440px;
+        height: 525px;
+        overflow: hidden;
+        border-radius: 20px 20px 190px 190px;
+        transition: all 0.3s cubic-bezier(0.55, 0.06, 0.47, 0.66);
+    }
+    .text-img {
+        position: absolute;
+        left: 0;
+        bottom: 10px;
+        @media #{$md,$xs} {
+            display: none;
+        }
+    }
+    .content-wrap {
+        background: #fff;
+        text-align: center;
+        padding: 23px 7px;
+        border-radius: 10px;
+        position: absolute;
+        bottom: -110px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        transition: all 0.3s cubic-bezier(0.55, 0.06, 0.47, 0.66);
+    }
+    .name {
+        font-size: 22px;
+        color: var(--chy-h1-color);
+        margin-bottom: 5px;
+        &:hover {
+            color: var(--chy-pr-1);
+        }
+    }
+    .bio {
+        text-transform: capitalize;
+        font-weight: 500;
+        font-size: 18px;
+    }
+    &:is(.has-style-2) {
+        padding-left: 0;
+        padding-right: 50px;
+        @media #{$md,$xs} {
+            padding-right: 0px;
+        }
+        .main-img {
+            border-radius: 190px 190px 20px 20px;
+        }
+        .text-img {
+            left: unset;
+            bottom: unset;
+            right: 0;
+            top: 20px;
+        }
+    }
+    &:hover {
+        .main-img {
+            filter: grayscale(1);
+            .content-wrap {
+                bottom: 0;
+            }
+        }
+    }
+}
+
+
+// team-slider-1-start
+.chy-team-slider-1-wrap {
+    padding-left: 70px;
+    padding-right: 70px;
+    @media #{$xl,$lg,$md,$xs} {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+.chy-team-slider-1-item {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    @media #{$xs} {
+        flex-wrap: wrap;
+    }
+    .main-img {
+        width: 470px;
+        height: 470px;
+        border-radius: 50%;
+        overflow: hidden;
+        text-align: center;
+        position: relative;
+        object-position: top;
+        z-index: 1;
+        flex: 0 0 auto;
+        transform: rotateY(90deg);
+        transition: 600ms ;
+        @media #{$md} {
+            width: 350px;
+            height: 350px;
+        }
+        @media #{$xs} {
+            width: 100%;
+            height: 350px;
+        }
+        &::after {
+            width: 100%;
+            height: 100%;
+            content: "";
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            background: linear-gradient(0deg, rgba(255,255,255,1) 20%, rgba(255,255,255,0) 100%);
+            z-index: -1;
+        }
+        img {
+            transform: translateY(100%);
+            transition: 600ms ease-in-out;
+            transition-delay: 0s;
+        }
+    }
+    .title {
+        font-size: 35px;
+        font-weight: 800;
+        margin-bottom: 22px;
+        transform: translateX(100px);
+        transition: 600ms ease-in-out;
+        opacity: 0;
+    }
+    .comment {
+        font-size: 22px;
+        font-weight: 500;
+        color: #0d161a;
+        line-height: 1.45;
+        padding-left: 30px;
+        border-left: 4px solid var(--chy-pr-1);
+        margin-bottom: 60px;
+        transform: translateX(100px);
+        transition: 600ms ease-in-out;
+        opacity: 0;
+        transition-delay: 0.3s;
+    }
+    .name {
+        font-size: 28px;
+        font-weight: 800;
+        color: #0d161a;
+        margin-bottom: 5px;
+    }
+    .bio {
+        display: inline-block;
+        font-weight: 500;
+        background: var(--chy-gd-1);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    .content-wrap {
+        transform: translateX(100px);
+        transition: 1000ms ease-in-out;
+        opacity: 0;
+        transition-delay: .9s;
+    }
+}
+
+.chy-team-slider-1-wrap {
+    .swiper-container {
+        .swiper-wrapper {
+            .swiper-slide {
+                &:is(.swiper-slide-active) {
+                    .chy-team-slider-1-item .main-img {
+                        transform: rotateY(0deg);
+                        img {
+                            transform: translateY(0);
+                            transition-delay: .3s;
+                        }
+                    }
+                    .chy-team-slider-1-item {
+                        .title {
+                            transform: translateX(0);
+                            opacity: 1;
+                        }
+                        .comment {
+                            transform: translateX(0);
+                            opacity: 1;
+                            transition-delay: 0s;
+                        }
+                        .content-wrap {
+                            transform: translateX(0px);
+                            opacity: 1;
+                            transition-delay: 0s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .chy-team-slider-1-pagination {
+        padding-top: 30px;
+        padding-left: 170px;
+        display: flex;
+        gap: 25px;
+        @media #{$xs} {
+            padding-left: 50px;
+        }
+        span {
+            opacity: 1;
+            width: 14px;
+            height: 14px;
+            border: 1px solid #969293;
+            background: transparent;
+            &:is(.swiper-pagination-bullet-active) {
+                background: var(--chy-gd-1);
+                border-color: transparent;
+            }
+        }
+    }
+}
+
+
+// team-slider-1-end
+
+// team-slider-2-start
+.chy-team-2-item {
+    margin-bottom: 40px;
+    .main-img {
+        height: 610px;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 0 0 300px 300px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        @media #{$xl} {
+            height: 560px;
+        }
+        @media #{$lg} {
+            height: 450px;
+        }
+        @media #{$md} {
+            height: 510px;
+        }
+        @media #{$xs} {
+            height: 450px;
+        }
+        @media #{$sm} {
+            height: 350px;
+        }
+        img {
+            object-position: top;
+        }
+        &::after {
+            content: "";
+            width: 100%;
+            height: 75%;
+            background: linear-gradient(90deg, #70DBFF 0%, #DD98FF 100%);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 30px;
+            transition: 400ms ease-in-out;
+        }
+    }
+    .content-wrap {
+        background: linear-gradient(90deg, rgba(112, 219, 255, 0.35) 0%, rgba(221, 152, 255, 0.35) 100%), #FFF;
+        padding: 20px 10px;
+        position: absolute;
+        bottom: 80px;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+    .name {
+        display: block;
+        font-size: 28px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #252A4E;
+        font-family: var(--urbanist);
+        line-height: 1.2;
+        margin-bottom: 3px;
+        transition: 400ms;
+        &:hover {
+            color: var(--chy-pr-1);
+        }
+
+        @media #{$xs} {
+            font-size: 22px;
+        }
+
+        @media #{$sm} {
+            font-size: 24px;
+        }
+    }
+    .bio {
+        display: block;
+        background: linear-gradient(90deg, #9255CE -2.17%, #BE60FF 100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .social-links {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        opacity: 0;
+        transition: 400ms;
+        li {
+            display: inline-block;
+            margin-right: 10px;
+            a {
+                display: inline-flex;
+                width: 40px;
+                height: 40px;
+                background: var(--chy-gd-2);
+                border-radius: 50%;
+                justify-content: center;
+                align-items: center;
+                color: #ffff;
+                outline: 3px solid rgb(255 255 255 / 50%);
+                transition: 400ms;
+
+                .twitter {
+                    display: block;
+                    transform: translateY(3px);
+                }
+                &:hover {
+                    color: var(--chy-h2-color);
+                }
+            }
+        }
+    }
+    
+    &:hover {
+        .main-img {
+            &::after {
+                border-radius: 300px;
+            }
+        }
+        .social-links  {
+            bottom: 25px;
+            opacity: 1;
+        }
+    }
+}
+
+
+
+// team-slider-2-end
+
+// team-4-start
+.chy-team-4-area {
+    .section-title-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        @media #{$md,$xs} {
+            flex-wrap: wrap;
+            gap: 0px 30px;
+        }
+        .left {
+            max-width: 560px;
+        }
+    }
+}
+// team-4-end

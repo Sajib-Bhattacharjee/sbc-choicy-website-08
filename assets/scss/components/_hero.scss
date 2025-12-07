@@ -1,0 +1,1051 @@
+/* 
+    06. hero
+*/
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+
+// hero-1-start
+.chy-hero-1 {
+    &-area {
+        position: relative;
+        padding-top: 140px;
+        padding-bottom: 160px;
+        @media #{$md,$xs} {
+            padding-top: 240px;     
+        }
+        .il-shape-4 {
+            position: absolute;
+            right: -340px;
+            bottom: 0;
+            opacity: 0;
+            transition: 1000ms ease;
+        }
+        &:is(.active) {
+            .il-shape-4 {
+                opacity: 1;
+                right: 0;
+            }
+            .chy-hero-1-img .main-img::after {
+                width: 90%;
+            }
+            .chy-hero-1-img .main-img img {
+                transform: translateY(0%);
+            }
+            .chy-hero-1-content .il-shape-1 {
+                top: -80px;
+                opacity: 1;
+                clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+            }
+            .chy-hero-1-img .il-shape-2 {
+                left: -40px;
+                opacity: 1;
+            }
+            .chy-hero-1-img .il-shape-1 {
+                right: -30px;
+                opacity: 1;
+                @media #{$xl,$lg,$md} {
+                    right: 0;
+                }
+                @media #{$xs} {
+                    right: 0;
+                    bottom: 66%;
+                }
+                @media #{$sm} {
+                    right: 0;
+                }
+            }
+            .chy-hero-1-img .il-shape-3 {
+                bottom: -60px;
+                opacity: 1;
+            }
+        }
+    }
+    &-content {
+        position: relative;
+        max-width: 500px;
+        margin-bottom: -70px;
+        @media #{$md,$xs} {
+            margin-bottom: 50px;
+        }
+        .subtitle {
+            text-transform: capitalize;
+            padding-left: 0;
+            &::after {
+                display: none;
+            }
+        }
+        .title {
+            font-size: 90px;
+            line-height: 1;
+            font-weight: 900;
+            margin-bottom: 15px;
+            letter-spacing: -2px;
+            @media #{$xl} {
+                font-size: 80px;
+            }
+            @media #{$lg} {
+                font-size: 70px;
+            }
+            @media #{$md} {
+                font-size: 60px;
+            }
+            @media #{$xs} {
+                font-size: 40px;
+            }
+            @media #{$sm} {
+                font-size: 50px;
+            }
+        }
+        .disc {
+            color: var(--chy-h1-color);
+            font-weight: 500;
+            margin-bottom: 35px;
+            letter-spacing: 0.2px;
+        }
+        .btn-wrap {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+        .il-shape-1 {
+            position: absolute;
+            right: -90px;
+            top: -20px;
+            opacity: 0;
+            transition: 1500ms ease;
+            transition-delay: 1.2s;
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+            @media #{$xs} {
+                right: 0px;
+                width: 50%;
+            }
+            @media #{$sm} {
+                right: -250px;
+                width: 100%;
+            }
+        }
+    }
+    
+}
+
+.chy-hero-1-img {
+    text-align: center;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        background: linear-gradient( -3deg, rgb(253,59,69) 0%, rgb(250,134,64) 100%);
+        left: 23%;
+        top: 42%;
+        animation: chyh1curle 4s infinite ease-in-out;
+        transition-delay: 2s;
+        z-index: 1;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        background: linear-gradient( -3deg, rgb(253,59,69) 0%, rgb(250,134,64) 100%);
+        right: 20%;
+        top: 35%;    
+        animation: chyh1curle 3s infinite ease-in-out;
+        transition-delay: 2s;
+        z-index: 2;
+    }
+
+    .main-img {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        &::after {
+            width: 0%;
+            height: 290px;
+            background: #FBF3FD;
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: -1;
+            border-radius: 20px;
+            transition: 1000ms ease;
+        }
+        img {
+            transform: translateY(100%);
+            transition: 1000ms ease;
+            transition-delay: 1s;
+        }
+    }
+    .il-shape-1 {
+        position: absolute;
+        right: -90px;
+        bottom: 39%;
+        z-index: 1;
+        opacity: 0;
+        transition: 1000ms ease;
+        transition-delay: 1.5s;
+    }
+    .il-shape-2 {
+        position: absolute;
+        left: -150px;
+        bottom: 40px;
+        z-index: 1;
+        opacity: 0;
+        transition: 1500ms ease;
+        transition-delay: 1.5s;
+    }
+    .il-shape-3 {
+        position: absolute;
+        bottom: -120px;
+        right: 30px;
+        z-index: 1;
+        opacity: 0;
+        transition: 1000ms ease;
+        transition-delay: 1.5s;
+    }
+}
+
+
+@keyframes chyh1curle {
+    0% {
+        scale: .2;
+    }
+    50% {
+        scale: 1;
+    }
+    100% {
+        scale: .2;
+    }
+}
+// hero-1-end
+
+
+// hero-2-start
+
+.chy-hero-2-area {
+    padding-top: 210px;
+    padding-bottom: 150px;
+    background-position: bottom;
+    background-size: cover;
+}
+
+.chy-hero-2-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    padding: 0 120px;
+    @media #{$md,$xs} {
+        padding: 0 0px;
+        flex-wrap: wrap-reverse;
+        gap: 100px;
+    }
+}
+.chy-hero-2-item-img {
+    position: relative;
+    flex: 0 0 auto;
+    transform: rotateX(28deg) rotateY(21deg) scale3d(0.12, 0.1, 0.02);
+    transition: 1000ms ease-in-out;
+    .il-img-1 {
+        position: absolute;
+        top: 76px;
+        right: -13px;
+        z-index: 2;
+        rotate: -45deg;
+        transition: 2000ms ease-in-out;
+    }
+    .il-img-2 {
+        position: absolute;
+        top: 26px;
+        left: -64px;
+        z-index: 1;
+    }
+    .il-img-3 {
+        position: absolute;
+        bottom: -80px;
+        left: -10px;
+    }
+    .main-img {
+        max-width: 480px;
+        height: 675px;
+        position: relative;
+        text-align: center;
+        display: flex;
+        align-items: end;
+        z-index: 2;
+        @media #{$lg} {
+            max-width: 329px;
+            height: 506px;
+        }
+        @media #{$xs} {
+            max-width: 280px;
+            height: 446px;
+        }
+        @media #{$sm} {
+            max-width: 480px;
+            height: 675px;
+        }
+        .person-img {
+            position: absolute;
+            bottom: 51px;
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+            transition: 1000ms ease-in-out;
+            transition-delay: .0s;
+        }
+    }
+
+}
+
+.chy-hero-2-item-content {
+    .hero-2-subtitle {
+        font-size: 20px;
+        font-weight: 900;
+        background: #141515;
+        color: #fff;
+        display: inline-block;
+        padding: 15px;
+        clip-path: polygon(0 0, 100% 30%, 100% 30%, 0% 0%);
+        margin-left: 55px;
+        transition: 500ms ease-in-out;
+    }
+    .hero-2-title {
+        background: var(--chy-pr-2);
+        color: #fff;
+        font-size: 84px;
+        font-weight: 900;
+        display: inline-block;
+        padding-top: 10px;
+        padding-left: 50px;
+        padding-right: 60px;
+        padding-bottom: 25px;
+        clip-path: polygon(6% 0, 100% 0, 100% 0%, 0% 0%);
+        letter-spacing: -3px;
+        transition: 500ms ease-in-out;
+        transition-delay: .5s;
+        @media #{$lg} {
+            font-size: 74px;
+        }
+        @media #{$md} {
+            font-size: 70px;
+        }
+        @media #{$xs} {
+            font-size: 50px;
+            padding-left: 25px;
+            padding-right: 30px;
+        }
+        @media #{$sm} {
+            font-size: 60px;
+            padding-left: 50px;
+            padding-right: 60px;
+        }
+    }
+    .hero-2-title-2 {
+        background: #E1EAEA;
+        font-size: 84px;
+        font-weight: 900;
+        display: inline-block;
+        padding-top: 15px;
+        padding-left: 40px;
+        padding-right: 60px;
+        padding-bottom: 15px;
+        clip-path: polygon(6% 14%, 94% 0, 100% 0%, 0% 15%);
+        letter-spacing: -3px;
+        margin-top: -18px;
+        margin-bottom: 20px;
+        transition: 500ms ease-in-out;
+        transition-delay: 1s;
+        @media #{$lg} {
+            font-size: 74px;
+        }
+        @media #{$md} {
+            font-size: 70px;
+        }
+        @media #{$xs} {
+            font-size: 50px;
+            padding-left: 25px;
+            padding-right: 30px;
+        }
+        @media #{$sm} {
+            font-size: 60px;
+            padding-left: 50px;
+            padding-right: 60px;
+        }
+    }
+    .hero-2-disc {
+        color: #575757;
+        font-weight: 500;
+        margin-bottom: 43px;
+        transform: translateY(50px);
+        opacity: 0;
+        transition: 1000ms ease;
+        transition-delay: 0s;
+    }
+    .chy-pr-btn-3  {
+        transform: translateY(50px);
+        opacity: 0;
+        transition-delay: 0s;
+    }
+}
+
+
+.chy-hero-2-slider {
+    position: relative;
+    .swiper-container {
+        .swiper-wrapper {
+            .swiper-slide {
+                &:is(.swiper-slide-active) {
+                    .chy-hero-2-item {
+                        .hero-2-subtitle {
+                            clip-path: polygon(0 0, 100% 30%, 100% 100%, 0% 100%);
+                        }
+                        .hero-2-title {
+                            clip-path: polygon(6% 0, 100% 0, 100% 81%, 0% 100%);
+                        }
+                        .hero-2-title-2 {
+                            clip-path: polygon(6% 14%, 94% 0, 100% 100%, 0% 100%);
+                        }
+                        .hero-2-disc {
+                            transform: translateY(0px);
+                            opacity: 1;
+                            transition-delay: .4s;
+                        }
+                        .chy-pr-btn-3  {
+                            transform: translateY(0px);
+                            opacity: 1;
+                            transition-delay: 1s;
+                        }
+                        .chy-hero-2-item-img {
+                            transform: none;
+                            .main-img {
+                                .person-img {
+                                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+                                    transition-delay: .8s;
+                                }
+                            }
+                            .il-img-1 {
+                                rotate: 0deg;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .chy_hero_2_prev , .chy_hero_2_next {
+        width: 74px;
+        height: 74px;
+        background: #030303;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: #fff;
+        transition: 400ms ease;
+        z-index: 3;
+        @media #{$xs} {
+            width: 45px;
+            height: 45px;
+        }
+        &:hover {
+            background: var(--chy-pr-2);
+        }
+    }
+
+    .chy_hero_2_prev {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -207px;
+        @media #{$xxxl} {
+            left: -80px;
+        }
+        @media #{$xxl} {
+            left: -60px;
+        }
+        @media #{$xl} {
+            left: 0px;
+        }
+        @media #{$lg} {
+            left: 0px;
+        }
+        @media #{$md} {
+            left: 0px;
+        }
+        @media #{$xs} {
+            left: 0px;
+        }
+    }
+    .chy_hero_2_next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -207px;
+        @media #{$xxxl} {
+            right: -80px;
+        }
+        @media #{$xxl} {
+            right: -60px;
+        }
+        @media #{$xl} {
+            right: 0px;
+        }
+        @media #{$lg} {
+            right: 0px;
+        }
+        @media #{$md} {
+            right: 0px;
+        }
+        @media #{$xs} {
+            right: 0px;
+        }
+    }
+}
+
+// hero-2-end
+
+
+
+// hero-3-start
+.chy-hero-3 {
+    
+    &-item {
+        &-wrap {
+            position: relative;
+            padding-top: 210px;
+            padding-bottom: 180px;
+            @media #{$xs} {
+                padding-top: 120px;
+            }
+            @media #{$sm} {
+                padding-top: 210px;
+            }
+            .bg-img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                img {
+                    --_g: 10% /45% 45% no-repeat linear-gradient(#000 0 0);
+                    --m:
+                      left   var(--_i,0%) top    var(--_g),
+                      bottom var(--_i,0%) left   var(--_g),
+                      top    var(--_i,0%) right  var(--_g),
+                      right  var(--_i,0%) bottom var(--_g);
+                    -webkit-mask: var(--m);
+                            mask: var(--m);
+                    filter: grayscale(1);
+                    transition: 1s linear;
+                    scale: 1.2;
+                    transition-delay: .3s;
+                }
+            }
+           
+        }
+
+    }
+}
+
+
+.chy-hero-3-item {
+    position: relative;
+    .il-img-2 {
+        position: absolute;
+        left: 240px;
+        bottom: -180px;
+        transform: rotateY(90deg);
+        transition: 1.5s ease-in-out;
+        transition-delay: .7s;
+        @media #{$lg} {
+            left: 0px;
+        }
+        @media #{$md,$xs} {
+           display: none;
+        }
+    }
+    
+    .il-img-1 {
+        position: absolute;
+        left: -40px;
+        top: -90px;
+        transform: rotate(114deg) scale(0);
+        transition: 2s ease-in-out;
+        transition-delay: .3s;
+        @media #{$xxl,$xl} {
+            left: 0px;
+        }
+        @media #{$lg,$md,$xs} {
+            display: none;
+         }
+    }
+}
+
+.chy-hero-3-item-content  {
+    max-width: 575px;
+    margin-left: auto;
+    .hero-3-subtitle {
+        font-size: 19px;
+        font-weight: 900;
+        background: #141515;
+        color: #fff;
+        display: inline-block;
+        padding: 15px;
+        clip-path: polygon(0 0, 100% 20%, 100% 20%, 0% 0%);
+        margin-left: 45px;
+        transition: 500ms ease-in-out;
+        transition-delay: .3s;
+    }
+
+    .hero-3-title {
+        background: var(--chy-pr-3);
+        color: var(--chy-h1-color);
+        font-size: 84px;
+        font-weight: 900;
+        display: inline-block;
+        padding: 5px 30px;
+        padding-bottom: 10px;
+        letter-spacing: -3px;
+        clip-path: polygon(0 0, 93% 0, 100% 0%, 0 0%);
+        padding-right: 40px;
+        transition: 500ms ease-in-out; 
+        transition-delay: 0.8s;
+        margin-left: 15px;
+        @media #{$lg} {
+            font-size: 74px;
+        }
+        @media #{$md} {
+            font-size: 70px;
+        }
+        @media #{$xs} {
+            font-size: 50px;
+            padding-left: 25px;
+            padding-right: 30px;
+        }
+        @media #{$sm} {
+            font-size: 60px;
+            padding-left: 50px;
+            padding-right: 60px;
+        }
+    }
+    .hero-3-title-2 {
+        background: #ffff;
+        font-size: 84px;
+        font-weight: 900;
+        display: inline-block;
+        padding-top: 15px;
+        padding-left: 40px;
+        padding-right: 60px;
+        padding-bottom: 15px;
+        letter-spacing: -3px;
+        margin-bottom: 45px;
+        transition: 500ms ease-in-out;
+        transition-delay: 1.3s; 
+        clip-path: polygon(0% 0, 92% 11%, 100% 12%, 0 0%);
+        margin-top: -15px;
+        @media #{$lg} {
+            font-size: 74px;
+        }
+        @media #{$md} {
+            font-size: 70px;
+        }
+        @media #{$xs} {
+            font-size: 50px;
+            padding-left: 25px;
+            padding-right: 30px;
+        }
+        @media #{$sm} {
+            font-size: 60px;
+            padding-left: 50px;
+            padding-right: 60px;
+        }
+    }
+    .btn-position {
+        transform: translateY(100px);
+        transition: 1s ease-in-out;
+        transition-delay: .5s;
+        opacity: 0;
+    }
+}
+
+.chy-hero-3-slider {
+    position: relative; 
+
+    .swiper-container {
+        .swiper-wrapper {
+            .swiper-slide {
+                &:is(.swiper-slide-active) {
+                    .chy-hero-3-item-wrap {
+                        .bg-img {
+                            img {
+                                --_i: 10%;
+                                filter: grayscale(0);
+                            }
+
+                        }
+                        
+                        .chy-hero-3-item  {
+                            .il-img-1 {
+                                transform: rotate(0deg) scale(1);
+                            }
+                            .il-img-2 {
+                                transform: rotateY(0deg);
+                            }
+                            .chy-hero-3-item-content {
+                                .hero-3-subtitle {
+                                    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0% 100%);
+                                }
+                            
+                                .hero-3-title {
+                                    clip-path: polygon(0 0, 93% 0, 100% 100%, 0 85%);
+                                }
+                                .hero-3-title-2 {
+                                    clip-path: polygon(4% 0, 92% 11%, 100% 100%, 0 100%);
+                                }
+                                .btn-position {
+                                    transform: translateY(0px);
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .chy_hero_2_prev , .chy_hero_2_next {
+        width: 89px;
+        height: 89px;
+        background: #fff;
+        border: 2px solid #000;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: #000;
+        transition: 400ms ease;
+        z-index: 3;
+        @media #{$xs} {
+            width: 45px;
+            height: 45px;
+        }
+        &:hover {
+            background: var(--chy-pr-3);
+            border-color: transparent;
+        }
+    }
+
+    .chy_hero_2_prev {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 2vw;
+        @media #{$xs} {
+            top: 90%;
+        }
+    }
+    .chy_hero_2_next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 2vw;
+        @media #{$xs} {
+            top: 90%;
+        }
+    }
+}
+
+// hero-3-end
+
+
+// hero-4-start
+.chy-hero-4 {
+    &-wrap {
+        max-width: 1920px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        .bg-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 30px;
+            z-index: -1;
+            img {
+                width: 100%;
+                height: 100%;
+                @media #{$md,$xs} {
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+    &-content-wrap {
+        padding-top: 170px;
+        padding-bottom: 150px;
+        @media #{$xl} {
+            padding-top: 225px;
+            padding-bottom: 110px;
+        }
+        @media #{$lg} {
+            padding-top: 255px;
+            padding-bottom: 100px;
+        }
+        @media #{$md,$xs} {
+            padding-top: 210px;
+            padding-bottom: 30px;
+        }
+    }
+    
+}
+
+.chy-hero-4-content {
+    margin-bottom: 175px;
+    @media #{$md,$xs} {
+        margin-bottom: 50px;   
+    }
+    .hero-title {
+        font-size: 70px;
+        font-weight: 900;
+        line-height: 1.21;
+        margin-bottom: 25px;
+        span {
+            display: inline-block;
+            color: var(--chy-pr-4);
+        }
+        @media #{$lg} {
+            font-size: 60px;
+        }
+        @media #{$md} {
+            font-size: 55px;
+        }
+        @media #{$xs} {
+            font-size: 40px;
+        }
+        @media #{$sm} {
+            font-size: 50px;
+        }
+    }
+    .disc {
+        color: #515670;
+        margin-bottom: 50px;
+        margin-bottom: 50px;
+    }
+    .btn-wrap {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 42px;
+    }
+}
+
+.chy-hero-img {
+    position: relative;
+    text-align: right;
+    .il-img-1, .il-img-2, .il-img-3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% , -50%);
+        transition: 2000ms cubic-bezier(0.13, 0.37, 0.58, 1);
+        transition-delay: 1s;
+    }
+    .il-img-3 {
+        left: 70%;
+        top: 50%;
+        // left: 100%;
+        // top: 70%;
+        @media #{$xxl,$xl,$lg,$md,$xs} {
+            display: none;
+        }
+    }
+    .il-img-2 {
+        // top: 86%;
+        // left: 50%;
+        top: 50%;
+        left: 70%;
+    }
+    .il-img-1 {
+        top: 50%;
+        left: 70%;
+        // top: 40%;
+        // left: 23%;
+        @media #{$xl,$lg,$md,$xs} {
+            display: none;
+        }
+    }
+    .main-img {
+        overflow: hidden; 
+        img {
+            transform: translateY(100%);
+            transition: 1000ms cubic-bezier(0.13, 0.37, 0.58, 1);
+            transition-delay: 1.5s;
+        }
+    }
+    &:is(.active) {
+        .il-img-3 {
+            left: 100%;
+            top: 60%;
+            width: 200px;
+        }
+        .il-img-2 {
+            top: 86%;
+            left: 50%;
+        }
+        .il-img-1 {
+            top: 40%;
+            left: 23%;
+        }
+        .main-img {
+            img {
+                transform: translateY(0%);
+            }
+        }
+    }
+}
+
+.chy-hero-4-social {
+    position: absolute;
+    top: 45%;
+    left: 4vw;
+    transform: translateY(-50%);
+    @media #{$xxl,$xl,$lg,$md,$xs} {
+        display: none;
+    }
+    .text {
+      display: inline-block;
+      font-size: 14px;
+      line-height: 1;
+      letter-spacing: 3.29px;
+      writing-mode: vertical-lr;
+      margin-left: 17px;
+      font-weight: 600;
+      padding-bottom: 76px;
+      margin-bottom: 30px;
+      position: relative;
+      background: var(--Linear, linear-gradient(90deg, #30067C -2.17%, #6441C1 100%));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      &::after {
+        position: absolute;
+        width: 1px;
+        height: 45px;
+        background: linear-gradient(90deg, #5A1CCB -2.17%, #815EDC 100%);
+        content: "";
+        left: 7px;
+        bottom: 0;
+      }
+    }
+    li {
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+      a  {
+        display: inline-block;
+        background: linear-gradient(90deg, #70DBFF 0%, #DD98FF 100%);
+        clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+        width: 52px;
+        height: 45px;
+        text-align: center;
+        line-height: 45px;
+        color: #fff;
+        transition: 400ms ;
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+}
+
+
+.chy-hero-4-scroll-btn-wrap {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 4vw;
+    transform: translateY(-50%);
+    z-index: 1;
+    @media #{$xs} {
+        display: none;
+    }
+    @media #{$sm} {
+        display: block;
+    }
+    .text {
+        font-size: 20px;
+        font-weight: 500;
+        display: inline-block;
+        writing-mode: vertical-lr;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: #131835;
+        margin-left: 12px;
+        margin-bottom: 28px;
+    }
+    .icon {
+        position: relative;
+      display: block;
+      width: 57px;
+      height: 57px;
+      text-align: center;
+      line-height: 60px;
+      font-size: 20px;
+      background: linear-gradient(90deg, #5A1CCB -2.17%, #815EDC 100%);
+      border-radius: 50%;
+      color: #fff;
+      animation: colorChange 3s linear infinite;
+      filter: drop-shadow(0px 13px 69px rgba(84, 104, 133, 0.09));
+      &::after {
+        width: 100%;
+        height: 100%;
+        content: "";
+        top: 0;
+        left: 0;
+        position: absolute;
+        background: transparent;
+        border-radius: 50%;
+        border: 1px solid #774ED8;
+        scale: 1.3;
+        animation: scroll-btn-4 5s infinite ease-in-out;
+      }
+    }
+  }
+
+  @keyframes scroll-btn-4 {
+    0% {
+        scale: .8;
+        opacity: 0;
+    }
+    50% {
+        scale: 1.3;
+        opacity: 1;
+    }
+    100% {
+        scale: .8;
+        opacity: 0;
+    }
+  }
+
+
+  @media only screen and (min-width: 320px) and (max-width: 1900px) {
+    .chy-hero-4-wrap .bg-img {
+        padding: 30px 10px;
+    }
+  }
+
+
+// hero-4-end

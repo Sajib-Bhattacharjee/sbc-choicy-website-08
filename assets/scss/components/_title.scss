@@ -1,0 +1,340 @@
+/* 
+    04. title
+*/
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+// all section-title _ subtitle _ paragraph -start
+
+.chy-heading-1 {
+  font-family: var(--urbanist);
+  color: #141515;
+  text-transform: capitalize;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+.chy-heading-2 {
+  font-family: var(--urbanist);
+  color: var(--chy-h2-color);
+  text-transform: capitalize;
+  font-weight: 700;
+  line-height: 1.18;
+  margin-bottom: 0;
+}
+
+
+.chy-para-1 {
+  font-family: var(--urbanist);
+  color: #504e4e;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.556;
+  margin-bottom: 0;
+}
+
+.chy-para-2 {
+  font-family: var(--urbanist);
+  color: #575757;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: .3px;
+  margin-bottom: 0;
+}
+
+.chy-para-3 {
+  font-family: var(--urbanist);
+  color: #7e7e7e;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  margin-bottom: 0;
+}
+
+.chy-para-4 {
+  font-family: var(--urbanist);
+  color: #666A83;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 0;
+  &:is(.has-20) {
+    font-size: 20px;
+  }
+}
+
+.chy-section-para-1 {
+  font-family: var(--urbanist);
+  color: #504e4e;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.556;
+  margin-bottom: 0;
+}
+
+// home-1-subtitle
+.chy-subtitle-1 {
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1;
+  font-family: var(--urbanist);
+  text-transform: uppercase;
+  color: #5b5b5b;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 25px;
+  &::after {
+    position: absolute;
+    content: "";
+    width: 17px;
+    height: 16px;
+    background: var(--chy-gd-1);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  }
+}
+
+// home-1-subtitle
+.chy-subtitle-2 {
+  display: inline-block;
+  font-size: 19px;
+  font-weight: 900;
+  line-height: 1;
+  font-family: var(--urbanist);
+  text-transform: uppercase;
+  color: var(--chy-pr-2);
+  margin-bottom: 20px;
+  position: relative;
+  .icon {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 31px;
+  }
+}
+
+// home-3-subtitle
+.chy-subtitle-3 {
+  display: inline-block;
+  font-size: 15.65px;
+  font-weight: 700;
+  line-height: 1;
+  font-family: var(--urbanist);
+  text-transform: uppercase;
+  color: #121212;
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 5px;
+  &::after {
+    width: 8px;
+    height: 13px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--chy-pr-3);
+    border-radius: 3px;
+  }
+  &::before {
+    width: 8px;
+    height: 13px;
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    background: #000;
+    border-radius: 3px;
+  }
+}
+
+// home-4-subtitle
+.chy-subtitle-4 {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  letter-spacing: 0.32px;
+  line-height: 26px;
+  font-weight: 400;
+  font-family: var(--galada);
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #FFA835 -3.85%, #FA3DCC 97.3%, #FA3AD0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-left: 90px;
+ 
+  margin-bottom: 12px;
+  &::after {
+    width: 0px;
+    height: 1.5px;
+    content: "";
+    position: absolute;
+    top: 48%;
+    left: 0;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, #FFA835 -3.85%, #FA3DCC 97.3%, #FA3AD0 100%);
+    border-radius: 30px;
+    transition: 2000ms ease-in-out;
+    transition-delay: 1;
+  }
+
+  &:is(.has-center) {
+    padding-right: 90px;
+    &::before {
+      width: 0px;
+      height: 1.5px;
+      content: "";
+      position: absolute;
+      top: 48%;
+      right: 0;
+      transform: translateY(-50%);
+      background: linear-gradient(90deg, #FFA835 -3.85%, #FA3DCC 97.3%, #FA3AD0 100%);
+      border-radius: 30px;
+      transition: 2000ms ease-in-out;
+      transition-delay: 1;
+    }
+  }
+  &:is(.active) {
+    &::after {
+      width: 80px;
+    }
+    &:is(.has-center) {
+      &::before {
+        width: 80px;
+      }
+    }
+  }
+}
+
+.chy-title-1 {
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 1;
+  font-family: var(--urbanist);
+  text-transform: capitalize;
+  color: #141515;
+  margin-bottom: 20px;
+
+  &:is(.has-55) {
+    font-size: 55px;
+    @media #{$md} {
+      font-size: 50px;
+    }
+    @media #{$xs} {
+      font-size: 30px;
+    }
+    @media #{$sm} {
+      font-size: 40px;
+    }
+  }
+
+  @media #{$md} {
+    font-size: 50px;
+  }
+  @media #{$xs} {
+    font-size: 30px;
+  }
+  @media #{$sm} {
+    font-size: 40px;
+  }
+}
+
+.chy-title-2 {
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 1.16;
+  font-family: var(--urbanist);
+  text-transform: capitalize;
+  color: #141515;
+  margin-bottom: 22px;
+
+  &:is(.has-55) {
+    font-size: 55px;
+    @media #{$md} {
+      font-size: 50px;
+    }
+    @media #{$xs} {
+      font-size: 30px;
+    }
+    @media #{$sm} {
+      font-size: 40px;
+    }
+  }
+
+  @media #{$lg} {
+    font-size: 55px;
+  }
+
+  @media #{$md} {
+    font-size: 50px;
+  }
+  @media #{$xs} {
+    font-size: 30px;
+  }
+  @media #{$sm} {
+    font-size: 40px;
+  }
+}
+
+
+.chy-title-3 {
+  font-size: 65px;
+  font-weight: 800;
+  line-height: 1.15;
+  font-family: var(--urbanist);
+  text-transform: capitalize;
+  color: #272324;
+  margin-bottom: 7px;
+
+
+  @media #{$xl} {
+    font-size: 60px;
+  }
+
+
+  @media #{$lg} {
+    font-size: 50px;
+  }
+
+  @media #{$md} {
+    font-size: 45px;
+  }
+  @media #{$xs} {
+    font-size: 30px;
+  }
+  @media #{$sm} {
+    font-size: 40px;
+  }
+}
+
+
+.chy-title-4 {
+  font-size: 55px;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.55px;
+  font-family: var(--urbanist);
+  text-transform: capitalize;
+  color: var(--chy-h2-color);
+  margin-bottom: 25px;
+
+  @media #{$lg} {
+    font-size: 50px;
+  }
+  @media #{$md} {
+    font-size: 45px;
+  }
+  @media #{$xs} {
+    font-size: 30px;
+  }
+  @media #{$sm} {
+    font-size: 40px;
+  }
+}
+
+// all section-title _ subtitle _ paragraph -end

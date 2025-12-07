@@ -1,0 +1,121 @@
+/* 
+    25. breadcrumb
+*/
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// breadcrumb-start
+
+.breadcrumb {
+    &-area {
+        padding-top: 280px;
+        padding-bottom: 220px;
+    }
+    &-title {
+        font-size: 90px;
+        color: #fff;
+        font-weight: 800;
+        margin-bottom: 30px;
+        @media #{$xl} {
+            font-size: 80px;
+        }
+        @media #{$lg} {
+            font-size: 70px;
+        }
+        @media #{$md} {
+            font-size: 60px;
+        }
+        @media #{$xs} {
+            font-size: 40px;
+        }
+        @media #{$sm} {
+            font-size: 50px;
+        }
+    }
+    &-list {
+        & a,& span {
+            font-weight: 800;
+            font-size: 20px;
+            font-family: var(--urbanist);
+            color: #fff;
+            text-decoration: none;
+            display: inline-block;
+        }
+        & a {
+            padding-right: 25px;
+            position: relative;
+            margin-right: 20px;
+            transition: 400ms ease;
+            &:hover {
+                color: #f28541;
+            }
+            &::after {
+                content: "\f355";
+                position: absolute;
+                font-family: "Font Awesome 6 Pro";
+                right: 3px;
+                top: 53%;
+                transform: translateY(-50%);
+                font-size: 14px;
+            }
+            &::before {
+                content: "\f356";
+                position: absolute;
+                font-family: "Font Awesome 6 Pro";
+                right: -15px;
+                top: 53%;
+                transform: translateY(-50%);
+                font-size: 14px;
+                color: #f28541;
+            }
+        }
+        & span {
+            position: relative; 
+            text-transform: capitalize;
+            color: #f28541;
+            &::before {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 1px;
+                background-color: var(--clr-common-white);
+                bottom: -2px;
+                left: 0;
+            }
+        }
+    }
+}
+
+.breadcrumb-list {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    padding: 17px 30px;
+    border: 1px solid #873FEB;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(7.5px);
+}
+
+
+.breadcrumb-wrap {
+    position: relative;
+    z-index: 1;
+}
+
+.has-breadcrumb-overlay {
+    position: relative;
+    &::after {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #141515;
+        opacity: .8;
+    }
+}
+
+// breadcrumb-end

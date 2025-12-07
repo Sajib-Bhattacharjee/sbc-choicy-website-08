@@ -1,0 +1,44 @@
+/* 
+    24. back-to-top-button
+*/
+// back-to-top-btn-start
+.scroll-top  {
+  position: fixed;
+  right: 30px;
+  bottom: 0;
+  height: 60px;
+  width: 45px;
+  cursor: pointer;
+  display: block;
+  border-radius: 20px 20px 0px 0px;
+  z-index: 5;
+  background: #000;
+  opacity: 1;
+  visibility: visible;
+  transition: all 300ms linear;
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+  transform: translateY(80px);
+
+}
+.scroll-top-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  padding-top: 16px;
+  .icon-2 {
+    font-size: 16px;
+    position: absolute;
+    left: 33%;
+    bottom: 22%;
+    transform: translate(-50%, -50%);
+  }
+}
+.scroll-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+// back-to-top-btn-end

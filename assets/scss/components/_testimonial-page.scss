@@ -1,0 +1,84 @@
+/* 
+    30. testimonial-page
+*/
+
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+
+// testimonial-page-start
+
+.chy-testimonial-page-item {
+    background: #fff;
+    border-radius: 10px;
+    // border: 3px solid transparent;
+    padding: 45px 40px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 25px;
+    position: relative;
+    overflow: hidden;
+    transition: 400ms ease-in-out;
+    margin-bottom: 30px;
+    @media #{$xs} {
+        grid-template-columns: auto;
+        padding: 45px 15px;
+        padding-bottom: 100px;
+    }
+    @media #{$sm} {
+        grid-template-columns: auto auto;
+        padding: 45px 40px;
+        padding-bottom: 45px;
+    }
+    .comment {
+        font-size: 24px;
+        font-weight: 500;
+        color: #141515;
+        line-height: 1.66;
+        @media #{$lg} {
+            font-size: 20px;
+        }
+        @media #{$xl} {
+            font-size: 22px;
+        }
+        @media #{$xs} {
+            font-size: 18px;
+        }
+    }
+    .icon i { 
+        background: var(--chy-gd-1);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+        font-size: 70px;
+        line-height: 1;
+    }
+    .name {
+        font-size: 24px;
+        color: #F08441;
+        margin-bottom: 10px;
+    }
+    .bio {
+        font-size: 16px;
+        font-weight: 500;
+        color: #504E4E;
+        display: block;
+        line-height: 20px;
+    }
+    .person-img {
+        position: absolute;
+        right: -40px;
+        bottom: -60px;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 3px solid #A249ED;
+        overflow: hidden;
+    }
+    &:hover {
+        box-shadow: 2px 2px 20px 0px #00000050;
+    }
+}
+
+// testimonial-page-end

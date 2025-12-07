@@ -1,0 +1,105 @@
+/* 
+    34. career-details
+*/
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+// career-details-page-start
+
+.career-details-page-content {
+    padding: 30px;
+    background: #F7F8F8;
+    border-radius: 10px;
+    .main-img {
+        width: 100%;
+        height: 266px;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+    .title {
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        font-size: 40px;
+        @media #{$xs} {
+            font-size: 30px;
+        }
+        @media #{$sm} {
+            font-size: 35px;
+        }
+    }
+    .subtitle {
+        font-weight: 700;
+        line-height: 1.33;
+        margin-bottom: 20px;
+        font-size: 30px;
+        @media #{$xs} {
+            font-size: 22px;
+        }
+        @media #{$sm} {
+            font-size: 28px;
+        }
+    }
+    .disc {
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    
+}
+
+.career-details-page-content-list {
+    li {
+        font-family: var(--urbanist);
+        font-weight: 400;
+        font-size: 18px;
+        color: #504E4E;
+        line-height: 28px;
+        &:not(:last-child) {
+            margin-bottom: 15px;
+        }
+        i {
+            transform: translateY(3px);
+            display: inline-block;
+            margin-right: 5px;
+            color: var(--chy-pr-1);
+        }
+    }
+}
+
+.career-details-page-sidebar {
+    background: #141515;
+    border-radius: 10px;
+    .padding-wrap {
+        padding: 0 40px;
+    }
+    > .title {
+        font-size: 24px;
+        color: #fff;
+        font-weight: 800;
+        text-align: center;
+        line-height: 1.08;
+        padding: 30px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        text-transform: uppercase;
+    }
+    .btn-wrap {
+        text-align: center;
+        padding: 25px 15px;
+    }
+    .projects-details-info-item {
+        .title {
+            i {
+                color: #F08441;
+                display: inline-block;
+                margin-right: 3px;
+                transform: translateY(3px);
+            }
+        }
+        &:nth-last-child(1n)   {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+    }
+}
+
+// career-details-page-end

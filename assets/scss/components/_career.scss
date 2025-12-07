@@ -1,0 +1,96 @@
+/* 
+    33. career
+*/
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+
+
+// career-page-start
+.career-page-item-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 25px;
+    @media #{$md} {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media #{$xs} {
+        grid-template-columns: 1fr;
+    }
+}
+
+.career-page-item {
+    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.06);
+    border-radius: 10px;
+    padding: 30px 25px;
+    background-color: #fff;
+    border: 2px solid;
+    border-color: transparent;
+    transition: 400ms ease-in-out;
+    .icon-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+    .icon {
+        flex: 0 0 auto;
+    }
+    .full-time {
+        border: 1px solid #F08441;
+        border-radius: 50px;
+        display: block;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 28px;
+        color: #F08441;
+        padding: 4px 15px;
+    }
+    .title {
+        font-size: 24px;
+        font-weight: 800;
+        line-height: 1.33;
+        margin-bottom: 15px;
+    }
+    .meta {
+        padding-bottom: 20px;
+        border-bottom: 1px solid rgb(9 9 9 / 10%);
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: wrap;
+        span {
+            font-size: 18px;
+            display: inline-block;
+            color: #504E4E;
+            line-height: 30px;
+            text-transform: capitalize;
+            i {color: #EB5C18;margin-right: 7px;}
+        }
+    }
+    .disc {
+        margin-bottom: 25px;
+    }
+    .btn-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    .chy-pr-btn-1  {
+        box-shadow: none;
+    }
+    .price {
+        font-size: 26px;
+        color: #504E4E;
+    }
+    &:hover {
+        border-color: #A249ED;
+    }
+}
+
+// career-page-end
